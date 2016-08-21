@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SERVIDOR
@@ -28,24 +30,179 @@ public class Ejerc2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtsub = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtHijos = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtPago = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtBon = new javax.swing.JTextField();
+        cmdCalcu = new javax.swing.JButton();
+        cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel1.setText("   TOTAL A PAGAR A TRABAJADORES + BONIFICACIÓN");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 400, 60));
+
+        jLabel2.setText("   Sueldo base:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 80, 30));
+
+        txtsub.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsubKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtsub, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 150, 40));
+
+        jLabel3.setText("  Cantidad de hijos:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 100, 40));
+
+        txtHijos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHijosActionPerformed(evt);
+            }
+        });
+        txtHijos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHijosKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtHijos, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 60, 40));
+
+        jLabel4.setText(" Total a pagar:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 80, 30));
+
+        txtPago.setEditable(false);
+        txtPago.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPagoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 130, 40));
+
+        jLabel5.setText("Total de bonificación:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+
+        txtBon.setEditable(false);
+        txtBon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBonKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtBon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 130, 40));
+
+        cmdCalcu.setText("Calcular");
+        cmdCalcu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 80, 30));
+
+        cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 70, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtHijosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHijosActionPerformed
+         
+    }//GEN-LAST:event_txtHijosActionPerformed
+
+    private void txtsubKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsubKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtsubKeyTyped
+
+    private void txtHijosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHijosKeyTyped
+         char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtHijosKeyTyped
+
+    private void txtPagoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPagoKeyTyped
+        
+    }//GEN-LAST:event_txtPagoKeyTyped
+
+    private void txtBonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBonKeyTyped
+         
+    }//GEN-LAST:event_txtBonKeyTyped
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+         txtHijos.setText("");
+         txtsub.setText("");
+         txtBon.setText("");
+         txtPago.setText("");
+         
+    }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void cmdCalcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcuActionPerformed
+        String res,resd;
+        double sb,nh,res1,res2;
+       
+       if (txtsub.getText().trim().isEmpty()){
+        JOptionPane.showMessageDialog(this, "Digite el sueldo base", "Error",JOptionPane.ERROR_MESSAGE);
+        txtsub.requestFocusInWindow();
+       }else if(txtHijos.getText().trim().isEmpty()){
+        JOptionPane.showMessageDialog(this, "Digite el numero de hijos ", "Error",JOptionPane.ERROR_MESSAGE);
+        txtHijos.requestFocusInWindow();
+       }
+       else{
+           sb=Double.parseDouble(txtsub.getText());
+           nh=Double.parseDouble(txtHijos.getText());
+           
+        if(nh==0){
+        JOptionPane.showMessageDialog(this,"No recibe bonificación", "Error", JOptionPane.ERROR_MESSAGE);
+        txtHijos.requestFocusInWindow();
+        }
+        else{
+            res1=(sb*80000);
+            res2=(sb+res1);
+            
+            
+        res=String.valueOf(res1);
+        txtPago.setText(res);
+        resd=String.valueOf(res2);
+        txtBon.setText(resd);
+        }
+        
+       }
+    }//GEN-LAST:event_cmdCalcuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -83,6 +240,17 @@ public class Ejerc2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtBon;
+    private javax.swing.JTextField txtHijos;
+    private javax.swing.JTextField txtPago;
+    private javax.swing.JTextField txtsub;
     // End of variables declaration//GEN-END:variables
 }
