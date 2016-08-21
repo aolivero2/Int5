@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SERVIDOR
@@ -39,14 +41,20 @@ public class Ejerc3 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 0));
         jLabel1.setText("      AHORRADORES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 110, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 180, 30));
 
+        jLabel2.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 0));
         jLabel2.setText("  Cantidad Ahorrada:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 110, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 130, 40));
 
+        cmdCalcular.setBackground(new java.awt.Color(51, 255, 0));
         cmdCalcular.setText("Calcular");
         cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +63,7 @@ public class Ejerc3 extends javax.swing.JFrame {
         });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
+        cmdBorrar.setBackground(new java.awt.Color(0, 204, 0));
         cmdBorrar.setText("Borrar");
         cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,12 +77,15 @@ public class Ejerc3 extends javax.swing.JFrame {
                 txtCantAKeyTyped(evt);
             }
         });
-        jPanel1.add(txtCantA, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 170, 40));
+        jPanel1.add(txtCantA, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 170, 40));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 0));
         jLabel4.setText("      Saldo Total:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 100, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 100, 30));
 
+        txtTotal.setEditable(false);
         txtTotal.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTotalKeyTyped(evt);
@@ -98,19 +110,52 @@ public class Ejerc3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCantAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantAKeyTyped
-        // TODO add your handling code here:
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
     }//GEN-LAST:event_txtCantAKeyTyped
 
     private void txtTotalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotalKeyTyped
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtTotalKeyTyped
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-        // TODO add your handling code here:
+        String res;
+        double vi,res1,op;
+        
+        if (txtCantA.getText().trim().isEmpty()){
+        JOptionPane.showMessageDialog(this, "Digite la cantidad ahorrada", "Error",JOptionPane.ERROR_MESSAGE);
+        txtCantA.requestFocusInWindow();
+       }else{
+           vi=Double.parseDouble(txtCantA.getText());
+           res1=(vi*1.5)/100;
+           op=vi+res1;
+           
+         if(vi==0){
+        JOptionPane.showMessageDialog(this,"Digite una cantidad", "Error", JOptionPane.ERROR_MESSAGE);
+        txtCantA.requestFocusInWindow();
+        }
+        else{
+            res1=((vi*1.5)/100)+vi;
+            
+            
+        res=String.valueOf(res1);
+        txtTotal.setText(res);
+        
+        }  
+         
+        }
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
-        // TODO add your handling code here:
+        txtTotal.setText("");
+         txtCantA.setText("");
+         
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
