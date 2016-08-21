@@ -64,7 +64,7 @@ public class Ejerc2 extends javax.swing.JFrame {
                 txtsubKeyTyped(evt);
             }
         });
-        jPanel1.add(txtsub, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 150, 40));
+        jPanel1.add(txtsub, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 150, 40));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 255));
