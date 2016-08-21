@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SERVIDOR
@@ -28,10 +30,143 @@ public class Ejerc1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtCantidadUno = new javax.swing.JTextField();
+        txtCantidadDos = new javax.swing.JTextField();
+        txtCantidadTres = new javax.swing.JTextField();
+        cmdCalcular = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtCantT = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtPorcUno = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtPorcDos = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtPorcTres = new javax.swing.JTextField();
+        cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 204, 102));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel1.setText("CALCULAR PORCENTAJES DE CANTIDADES");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, 30));
+
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel2.setText("Cantidad no.1:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel3.setText("Cantidad no.2:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 20));
+
+        jLabel4.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel4.setText("Cantidad no.3:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        txtCantidadUno.setBackground(new java.awt.Color(255, 204, 153));
+        txtCantidadUno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadUnoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCantidadUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 120, 30));
+
+        txtCantidadDos.setBackground(new java.awt.Color(255, 204, 153));
+        txtCantidadDos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadDosKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCantidadDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 120, 30));
+
+        txtCantidadTres.setBackground(new java.awt.Color(255, 204, 153));
+        txtCantidadTres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadTresKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCantidadTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 120, 30));
+
+        cmdCalcular.setBackground(new java.awt.Color(255, 102, 51));
+        cmdCalcular.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        cmdCalcular.setForeground(new java.awt.Color(255, 0, 0));
+        cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 90, 30));
+
+        jLabel5.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
+        jLabel5.setText("Total:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+
+        txtCantT.setBackground(new java.awt.Color(255, 204, 153));
+        txtCantT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtCantT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 120, 30));
+
+        jLabel6.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel6.setText("Porcentaje 1:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+
+        txtPorcUno.setEditable(false);
+        txtPorcUno.setBackground(new java.awt.Color(255, 204, 153));
+        txtPorcUno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPorcUnoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPorcUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 110, 30));
+
+        jLabel7.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel7.setText("Porcentaje 2:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, -1));
+
+        txtPorcDos.setEditable(false);
+        txtPorcDos.setBackground(new java.awt.Color(255, 204, 153));
+        txtPorcDos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPorcDosKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPorcDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 110, 30));
+
+        jLabel8.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        jLabel8.setText("Porcentaje 3:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
+
+        txtPorcTres.setEditable(false);
+        txtPorcTres.setBackground(new java.awt.Color(255, 204, 153));
+        txtPorcTres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPorcTresKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtPorcTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 110, 30));
+
+        cmdBorrar.setBackground(new java.awt.Color(255, 102, 51));
+        cmdBorrar.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
+        cmdBorrar.setForeground(new java.awt.Color(255, 0, 0));
+        cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 80, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -46,6 +181,141 @@ public class Ejerc1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        String porc1,porc2,porc3,cant;
+        int cant1,cant2,cant3,result,porcr1,porcr2,porcr3;
+        
+        if (txtCantidadUno.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite la primera cantidad", "Error",JOptionPane.ERROR_MESSAGE);
+         txtCantidadUno.requestFocusInWindow();
+        }
+        else if (txtCantidadDos.getText().trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"Digite la segunda cantidad", "Error",JOptionPane.ERROR_MESSAGE);
+         txtCantidadDos.requestFocusInWindow(); 
+        }
+        else if (txtCantidadTres.getText().trim().isEmpty()){
+        JOptionPane.showMessageDialog(this,"Digite la tercera cantidad", "Error",JOptionPane.ERROR_MESSAGE);
+        txtCantidadTres.requestFocusInWindow();   
+        }
+        else{
+       cant1=Integer.parseInt(txtCantidadUno.getText());
+       cant2=Integer.parseInt(txtCantidadDos.getText());
+       cant3=Integer.parseInt(txtCantidadTres.getText());
+       
+        if (cant2==cant1){
+        JOptionPane.showMessageDialog(this,"Digite por favor otro valor", "Error", JOptionPane.ERROR_MESSAGE);
+        txtCantidadUno.requestFocusInWindow();
+           }
+         else if (cant3==cant2){
+         JOptionPane.showMessageDialog(this,"Digite por favor otro valor", "Error", JOptionPane.ERROR_MESSAGE);
+          txtCantidadDos.requestFocusInWindow();
+         }
+         else if (cant3==cant1){
+          JOptionPane.showMessageDialog(this,"Digite por favor otro valor", "Error", JOptionPane.ERROR_MESSAGE);  
+          txtCantidadTres.requestFocusInWindow();
+          
+         }
+         else{
+             result=cant1+cant2+cant3;
+             porcr1=(Integer) (cant1*100)/result;
+             porcr2=(Integer) (cant2*100)/result;
+             porcr3=(Integer) (cant3*100)/result;
+         
+        cant=String.valueOf(result);
+        txtCantT.setText(cant);
+        porc1=String.valueOf(porcr1+"%");
+        txtPorcUno.setText(porc1);
+        porc2=String.valueOf(porcr2+"%");
+        txtPorcDos.setText(porc2);
+        porc3=String.valueOf(porcr3+"%");
+        txtPorcTres.setText(porc3);
+
+         }
+       
+        }  
+
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void txtCantidadUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadUnoKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtCantidadUnoKeyTyped
+
+    private void txtCantidadDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadDosKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtCantidadDosKeyTyped
+
+    private void txtCantidadTresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadTresKeyTyped
+       char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtCantidadTresKeyTyped
+
+    private void txtCantTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantTActionPerformed
+        
+    }//GEN-LAST:event_txtCantTActionPerformed
+
+    private void txtPorcUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPorcUnoKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtPorcUnoKeyTyped
+
+    private void txtPorcDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPorcDosKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtPorcDosKeyTyped
+
+    private void txtPorcTresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPorcTresKeyTyped
+       char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
+    }//GEN-LAST:event_txtPorcTresKeyTyped
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+       txtCantidadUno.setText("");
+       txtCantidadDos.setText("");
+       txtCantidadTres.setText("");
+       txtCantT.setText("");
+       txtPorcUno.setText("");
+       txtPorcDos.setText("");
+       txtPorcTres.setText("");
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -76,6 +346,7 @@ public class Ejerc1 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Ejerc1().setVisible(true);
             }
@@ -83,6 +354,23 @@ public class Ejerc1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtCantT;
+    private javax.swing.JTextField txtCantidadDos;
+    private javax.swing.JTextField txtCantidadTres;
+    private javax.swing.JTextField txtCantidadUno;
+    private javax.swing.JTextField txtPorcDos;
+    private javax.swing.JTextField txtPorcTres;
+    private javax.swing.JTextField txtPorcUno;
     // End of variables declaration//GEN-END:variables
 }
