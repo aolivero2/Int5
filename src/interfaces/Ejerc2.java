@@ -48,23 +48,31 @@ public class Ejerc2 extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel1.setForeground(new java.awt.Color(255, 102, 204));
         jLabel1.setText("   TOTAL A PAGAR A TRABAJADORES + BONIFICACIÓN");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 400, 60));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 400, 60));
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 255));
         jLabel2.setText("   Sueldo base:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 80, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 120, 30));
 
+        txtsub.setEditable(false);
+        txtsub.setBackground(new java.awt.Color(255, 204, 204));
         txtsub.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtsubKeyTyped(evt);
             }
         });
-        jPanel1.add(txtsub, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 150, 40));
+        jPanel1.add(txtsub, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 150, 40));
 
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 255));
         jLabel3.setText("  Cantidad de hijos:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 100, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 150, 40));
 
+        txtHijos.setEditable(false);
+        txtHijos.setBackground(new java.awt.Color(255, 204, 204));
         txtHijos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHijosActionPerformed(evt);
@@ -75,12 +83,15 @@ public class Ejerc2 extends javax.swing.JFrame {
                 txtHijosKeyTyped(evt);
             }
         });
-        jPanel1.add(txtHijos, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 60, 40));
+        jPanel1.add(txtHijos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 60, 40));
 
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 255));
         jLabel4.setText(" Total a pagar:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 80, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 100, 40));
 
         txtPago.setEditable(false);
+        txtPago.setBackground(new java.awt.Color(255, 204, 204));
         txtPago.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPagoKeyTyped(evt);
@@ -88,17 +99,23 @@ public class Ejerc2 extends javax.swing.JFrame {
         });
         jPanel1.add(txtPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 130, 40));
 
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 102, 255));
         jLabel5.setText("Total de bonificación:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         txtBon.setEditable(false);
+        txtBon.setBackground(new java.awt.Color(255, 204, 204));
         txtBon.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtBonKeyTyped(evt);
             }
         });
-        jPanel1.add(txtBon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 130, 40));
+        jPanel1.add(txtBon, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 40));
 
+        cmdCalcu.setBackground(new java.awt.Color(51, 255, 255));
+        cmdCalcu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdCalcu.setForeground(new java.awt.Color(51, 153, 255));
         cmdCalcu.setText("Calcular");
         cmdCalcu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +124,9 @@ public class Ejerc2 extends javax.swing.JFrame {
         });
         jPanel1.add(cmdCalcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 80, 30));
 
+        cmdBorrar.setBackground(new java.awt.Color(0, 204, 255));
+        cmdBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdBorrar.setForeground(new java.awt.Color(51, 153, 255));
         cmdBorrar.setText("Borrar");
         cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,34 +193,37 @@ public class Ejerc2 extends javax.swing.JFrame {
 
     private void cmdCalcuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcuActionPerformed
         String res,resd;
-        double sb,nh,res1,res2;
+        double sb,res1,res2;
+        int nh;
+       
        
        if (txtsub.getText().trim().isEmpty()){
         JOptionPane.showMessageDialog(this, "Digite el sueldo base", "Error",JOptionPane.ERROR_MESSAGE);
         txtsub.requestFocusInWindow();
-       }else if(txtHijos.getText().trim().isEmpty()){
+       }
+       else if(txtHijos.getText().trim().isEmpty()){
         JOptionPane.showMessageDialog(this, "Digite el numero de hijos ", "Error",JOptionPane.ERROR_MESSAGE);
         txtHijos.requestFocusInWindow();
        }
        else{
            sb=Double.parseDouble(txtsub.getText());
-           nh=Double.parseDouble(txtHijos.getText());
+           nh=Integer.parseInt(txtHijos.getText());
            
         if(nh==0){
         JOptionPane.showMessageDialog(this,"No recibe bonificación", "Error", JOptionPane.ERROR_MESSAGE);
         txtHijos.requestFocusInWindow();
         }
         else{
-            res1=(sb*80000);
+            res1=(nh*80000);
             res2=(sb+res1);
             
-            
+          
         res=String.valueOf(res1);
         txtPago.setText(res);
         resd=String.valueOf(res2);
         txtBon.setText(resd);
-        }
         
+        }
        }
     }//GEN-LAST:event_cmdCalcuActionPerformed
 
