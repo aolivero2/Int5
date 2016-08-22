@@ -37,58 +37,61 @@ public class Ejerc4 extends javax.swing.JFrame {
         txtCi = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtCf = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtVm = new javax.swing.JTextField();
         cmdCalcular = new javax.swing.JButton();
         cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("    VENTAS DE INMOBILIARIA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 160, 40));
+        jLabel1.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 102));
+        jLabel1.setText("      VENTAS DE INMOBILIARIA");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 250, 50));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Cantidad de metros a comprar:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, 30));
 
+        txtCm.setBackground(new java.awt.Color(255, 204, 204));
+        txtCm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCmActionPerformed(evt);
+            }
+        });
         txtCm.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCmKeyTyped(evt);
             }
         });
-        jPanel1.add(txtCm, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 70, 30));
+        jPanel1.add(txtCm, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 70, 30));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Cuota inicial:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
 
+        txtCi.setBackground(new java.awt.Color(255, 204, 204));
         txtCi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCiKeyTyped(evt);
             }
         });
-        jPanel1.add(txtCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 110, 30));
+        jPanel1.add(txtCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 110, 30));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("  Monto de cuotas:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 110, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 140, 30));
 
+        txtCf.setBackground(new java.awt.Color(255, 204, 204));
         txtCf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCfActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCf, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 110, 30));
+        jPanel1.add(txtCf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 110, 30));
 
-        jLabel5.setText("Valor por metros:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
-
-        txtVm.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtVmKeyTyped(evt);
-            }
-        });
-        jPanel1.add(txtVm, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 120, 30));
-
+        cmdCalcular.setBackground(new java.awt.Color(255, 153, 153));
         cmdCalcular.setText("Calcular");
         cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +100,13 @@ public class Ejerc4 extends javax.swing.JFrame {
         });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
 
+        cmdBorrar.setBackground(new java.awt.Color(255, 153, 153));
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -115,25 +124,28 @@ public class Ejerc4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCfActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCfActionPerformed
 
     private void txtCmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCmKeyTyped
-        // TODO add your handling code here:
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
     }//GEN-LAST:event_txtCmKeyTyped
 
-    private void txtVmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVmKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtVmKeyTyped
-
     private void txtCiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiKeyTyped
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCiKeyTyped
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
         String cuof,vmc,cuoi;
         int mts;
-        double c1,cu2,mf;
+        double ci,cu2,mf;
         
         if (txtCm.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(this, "Digite la cantidad de metros", "Error", JOptionPane.ERROR_MESSAGE);
@@ -141,19 +153,30 @@ public class Ejerc4 extends javax.swing.JFrame {
         }
         else{
             mts=Integer.parseInt(txtCm.getText());
-            c1=80000*mts;
-            cu2=(c1*35)/100;
+     
+           cu2=80000*mts;
+            ci=(cu2*35)/100;
             mf=cu2/12;
-            
-        cuoi= String.valueOf(c1);
+     
+        cuoi= String.valueOf(ci);
         txtCi.setText(cuoi);
         cuof=String.valueOf(cu2);
         txtCf.setText(cuof);
-        vmc= String.valueOf(mf);
-        txtVm.setText(vmc);
-        }
         
+        
+        }
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+       txtCi.setText("");
+       txtCf.setText("");
+       txtCm.setText("");
+       
+    }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtCmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,11 +220,9 @@ public class Ejerc4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCf;
     private javax.swing.JTextField txtCi;
     private javax.swing.JTextField txtCm;
-    private javax.swing.JTextField txtVm;
     // End of variables declaration//GEN-END:variables
 }
