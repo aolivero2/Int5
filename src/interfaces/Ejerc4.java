@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SERVIDOR
@@ -27,21 +29,131 @@ public class Ejerc4 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtCm = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtCi = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtCf = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtVm = new javax.swing.JTextField();
+        cmdCalcular = new javax.swing.JButton();
+        cmdBorrar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("    VENTAS DE INMOBILIARIA");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 160, 40));
+
+        jLabel2.setText("Cantidad de metros a comprar:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        txtCm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCmKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCm, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 70, 30));
+
+        jLabel3.setText("Cuota inicial:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+
+        txtCi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCiKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 110, 30));
+
+        jLabel4.setText("  Monto de cuotas:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 110, 30));
+
+        txtCf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCfActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtCf, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 110, 30));
+
+        jLabel5.setText("Valor por metros:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+
+        txtVm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVmKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtVm, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 120, 30));
+
+        cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+
+        cmdBorrar.setText("Borrar");
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtCfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCfActionPerformed
+
+    private void txtCmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCmKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCmKeyTyped
+
+    private void txtVmKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVmKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVmKeyTyped
+
+    private void txtCiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCiKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCiKeyTyped
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        String cuof,vmc,cuoi;
+        int mts;
+        double c1,cu2,mf;
+        
+        if (txtCm.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite la cantidad de metros", "Error", JOptionPane.ERROR_MESSAGE);
+            txtCm.requestFocusInWindow();
+        }
+        else{
+            mts=Integer.parseInt(txtCm.getText());
+            c1=80000*mts;
+            cu2=(c1*35)/100;
+            mf=cu2/12;
+            
+        cuoi= String.valueOf(c1);
+        txtCi.setText(cuoi);
+        cuof=String.valueOf(cu2);
+        txtCf.setText(cuof);
+        vmc= String.valueOf(mf);
+        txtVm.setText(vmc);
+        }
+        
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +191,17 @@ public class Ejerc4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtCf;
+    private javax.swing.JTextField txtCi;
+    private javax.swing.JTextField txtCm;
+    private javax.swing.JTextField txtVm;
     // End of variables declaration//GEN-END:variables
 }
